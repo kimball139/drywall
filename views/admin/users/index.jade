@@ -28,10 +28,10 @@ block body
   script(type='text/template', id='tmpl-filters')
     form.filters
       div.row
-        div.col-sm-3
+        div.col-sm-2
           label Username Search
           input.form-control(name='username', type='text')
-        div.col-sm-3
+        div.col-sm-2
           label Can Play Role
           select.form-control(name='roles')
             option(value='') any
@@ -40,6 +40,12 @@ block body
         div.col-sm-2
           label Is Active
           select.form-control(name='isActive')
+            option(value='') either
+            option(value='yes') yes
+            option(value='no') no
+        div.col-sm-2
+          label Is Tutor
+          select.form-control(name='isTutor')
             option(value='') either
             option(value='yes') yes
             option(value='no') no
@@ -68,6 +74,7 @@ block body
           th username
           th.stretch email
           th active
+          th tutor
           th id
       tbody#results-rows
 
@@ -77,6 +84,7 @@ block body
     td <%= username %>
     td <%= email %>
     td <%= isActive %>
+    td <%= isTutor %>
     td <%= _id %>
 
   script(type='text/template', id='tmpl-results-empty-row')

@@ -15,6 +15,10 @@ exports.find = function(req, res, next){
     filters.isActive = req.query.isActive;
   }
 
+  if (req.query.isTutor) {
+    filters.isTutor = req.query.isTutor;
+  }
+
   if (req.query.roles && req.query.roles === 'admin') {
     filters['roles.admin'] = { $exists: true };
   }
@@ -25,7 +29,7 @@ exports.find = function(req, res, next){
 
   req.app.db.models.User.pagedFind({
     filters: filters,
-    keys: 'username email isActive',
+    keys: 'username email isActive isTutor',
     limit: req.query.limit,
     page: req.query.page,
     sort: req.query.sort
@@ -121,6 +125,10 @@ exports.update = function(req, res, next){
       req.body.isActive = 'no';
     }
 
+    if (!req.body.isTutor) {
+      req.body.isTutor = 'no';
+    }
+
     if (!req.body.username) {
       workflow.outcome.errfor.username = 'required';
     }
@@ -175,6 +183,7 @@ exports.update = function(req, res, next){
   workflow.on('patchUser', function() {
     var fieldsToSet = {
       isActive: req.body.isActive,
+      isTutor: req.body.isTutor,
       username: req.body.username,
       email: req.body.email.toLowerCase(),
       search: [

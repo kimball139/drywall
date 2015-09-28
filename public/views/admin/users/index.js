@@ -11,7 +11,8 @@
       _id: undefined,
       username: '',
       email: '',
-      isActive: ''
+      isActive: '',
+      isTutor: ''
     },
     url: function() {
       return '/admin/users/'+ (this.isNew() ? '' : this.id +'/');
@@ -36,6 +37,7 @@
       username: '',
       roles: '',
       isActive: '',
+      isTutor: '',
       sort: '',
       limit: ''
     }

@@ -83,6 +83,7 @@ exports.signup = function(req, res){
 
       var fieldsToSet = {
         isActive: 'yes',
+        isTutor: 'no',
         username: req.body.username,
         email: req.body.email.toLowerCase(),
         password: hash,
@@ -385,6 +386,7 @@ exports.signupSocial = function(req, res){
   workflow.on('createUser', function() {
     var fieldsToSet = {
       isActive: 'yes',
+      isTutor: 'no',
       username: workflow.username,
       email: req.body.email.toLowerCase(),
       search: [

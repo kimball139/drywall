@@ -1,0 +1,342 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'passport.socketio',
+1 verbose cli   '--save' ]
+2 info using npm@2.7.5
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 silly cache add args [ 'passport.socketio', null ]
+6 verbose cache add spec passport.socketio
+7 silly cache add parsed spec { raw: 'passport.socketio',
+7 silly cache add   scope: null,
+7 silly cache add   name: 'passport.socketio',
+7 silly cache add   rawSpec: '',
+7 silly cache add   spec: '*',
+7 silly cache add   type: 'range' }
+8 verbose addNamed passport.socketio@*
+9 silly addNamed semver.valid null
+10 silly addNamed semver.validRange *
+11 silly addNameRange { name: 'passport.socketio', range: '*', hasData: false }
+12 silly mapToRegistry name passport.socketio
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/passport.socketio
+16 verbose addNameRange registry:https://registry.npmjs.org/passport.socketio not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/passport.socketio
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 19:42:39
+20 verbose request id bb70a575ff9d358d
+21 http request GET https://registry.npmjs.org/passport.socketio
+22 http 200 https://registry.npmjs.org/passport.socketio
+23 silly get cb [ 200,
+23 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly get     etag: '"2GV4HJHI0D8B5WTQLAY2KTW8Y"',
+23 silly get     'content-type': 'application/json',
+23 silly get     'cache-control': 'max-age=60',
+23 silly get     'content-length': '41220',
+23 silly get     'accept-ranges': 'bytes',
+23 silly get     date: 'Mon, 21 Sep 2015 02:42:38 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     age: '0',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-sjc3129-SJC',
+23 silly get     'x-cache': 'MISS',
+23 silly get     'x-cache-hits': '0',
+23 silly get     'x-timer': 'S1442803358.571251,VS0,VE156',
+23 silly get     vary: 'Accept' } ]
+24 verbose get saving passport.socketio to /Users/kimball139/.npm/registry.npmjs.org/passport.socketio/.cache.json
+25 silly addNameRange number 2 { name: 'passport.socketio', range: '*', hasData: true }
+26 silly addNameRange versions [ 'passport.socketio',
+26 silly addNameRange   [ '0.0.1',
+26 silly addNameRange     '0.0.2',
+26 silly addNameRange     '0.0.3',
+26 silly addNameRange     '0.0.4',
+26 silly addNameRange     '0.0.5',
+26 silly addNameRange     '1.0.0',
+26 silly addNameRange     '1.0.1',
+26 silly addNameRange     '1.1.0',
+26 silly addNameRange     '1.2.0',
+26 silly addNameRange     '1.2.1',
+26 silly addNameRange     '2.1.1',
+26 silly addNameRange     '2.1.2',
+26 silly addNameRange     '2.2.0',
+26 silly addNameRange     '2.2.1',
+26 silly addNameRange     '3.0.0',
+26 silly addNameRange     '3.0.1',
+26 silly addNameRange     '3.1.0',
+26 silly addNameRange     '3.1.1',
+26 silly addNameRange     '3.2.0',
+26 silly addNameRange     '3.3.0',
+26 silly addNameRange     '3.4.0',
+26 silly addNameRange     '3.4.1',
+26 silly addNameRange     '3.5.0',
+26 silly addNameRange     '3.5.1',
+26 silly addNameRange     '3.6.1' ] ]
+27 verbose addNamed passport.socketio@3.6.1
+28 silly addNamed semver.valid 3.6.1
+29 silly addNamed semver.validRange 3.6.1
+30 silly mapToRegistry name passport.socketio
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/passport.socketio
+34 verbose addRemoteTarball https://registry.npmjs.org/passport.socketio/-/passport.socketio-3.6.1.tgz not in flight; adding
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/passport.socketio/-/passport.socketio-3.6.1.tgz',
+35 verbose addRemoteTarball   '008481cf2b4c431d44aec66efb7ba961522d8361' ]
+36 info retry fetch attempt 1 at 19:42:39
+37 info attempt registry request try #1 at 19:42:39
+38 http fetch GET https://registry.npmjs.org/passport.socketio/-/passport.socketio-3.6.1.tgz
+39 http fetch 200 https://registry.npmjs.org/passport.socketio/-/passport.socketio-3.6.1.tgz
+40 silly fetchAndShaCheck shasum 008481cf2b4c431d44aec66efb7ba961522d8361
+41 verbose addTmpTarball /var/folders/s8/xp2lmk6s3gxgf1frzzk1nyyc0000gn/T/npm-95019-7359fd37/registry.npmjs.org/passport.socketio/-/passport.socketio-3.6.1.tgz not in flight; adding
+42 verbose addTmpTarball already have metadata; skipping unpack for passport.socketio@3.6.1
+43 silly cache afterAdd passport.socketio@3.6.1
+44 verbose afterAdd /Users/kimball139/.npm/passport.socketio/3.6.1/package/package.json not in flight; writing
+45 verbose afterAdd /Users/kimball139/.npm/passport.socketio/3.6.1/package/package.json written
+46 silly install resolved [ { name: 'passport.socketio',
+46 silly install resolved     version: '3.6.1',
+46 silly install resolved     description: 'access passport.js authenticated user information from socket.io',
+46 silly install resolved     main: 'lib/index.js',
+46 silly install resolved     keywords: [ 'socket', 'socket.io', 'passport' ],
+46 silly install resolved     author: { name: 'José F. Romaniello', email: 'jfromaniello@gmail.com' },
+46 silly install resolved     repository:
+46 silly install resolved      { type: 'git',
+46 silly install resolved        url: 'git+https://github.com/jfromaniello/passport.socketio.git' },
+46 silly install resolved     scripts: { test: 'mocha' },
+46 silly install resolved     license: 'MIT',
+46 silly install resolved     dependencies: { xtend: '^4.0.0' },
+46 silly install resolved     peerDependencies: { passport: '~0.3.0' },
+46 silly install resolved     devDependencies:
+46 silly install resolved      { 'body-parser': '~1.12.2',
+46 silly install resolved        connect: '~2.7.11',
+46 silly install resolved        'cookie-parser': '~1.3.4',
+46 silly install resolved        express: '~4.12.3',
+46 silly install resolved        'express-session': '~1.10.4',
+46 silly install resolved        mocha: '~1.9.0',
+46 silly install resolved        'passport-local': '~1.0.0',
+46 silly install resolved        request: '~2.19.0',
+46 silly install resolved        should: '~1.2.2',
+46 silly install resolved        'socket.io': '~0.9.14',
+46 silly install resolved        'socket.io-client': 'git+https://github.com/jfromaniello/socket.io-client.git',
+46 silly install resolved        xmlhttprequest: '~1.5.0' },
+46 silly install resolved     gitHead: '8231e3f27e113bb304ca60d8e8f53ae023b470a4',
+46 silly install resolved     bugs: { url: 'https://github.com/jfromaniello/passport.socketio/issues' },
+46 silly install resolved     homepage: 'https://github.com/jfromaniello/passport.socketio#readme',
+46 silly install resolved     _id: 'passport.socketio@3.6.1',
+46 silly install resolved     _shasum: '008481cf2b4c431d44aec66efb7ba961522d8361',
+46 silly install resolved     _from: 'passport.socketio@*',
+46 silly install resolved     _npmVersion: '2.14.0',
+46 silly install resolved     _nodeVersion: '0.12.4',
+46 silly install resolved     _npmUser: { name: 'jfromaniello', email: 'jfromaniello@gmail.com' },
+46 silly install resolved     maintainers: [ [Object], [Object] ],
+46 silly install resolved     dist:
+46 silly install resolved      { shasum: '008481cf2b4c431d44aec66efb7ba961522d8361',
+46 silly install resolved        tarball: 'http://registry.npmjs.org/passport.socketio/-/passport.socketio-3.6.1.tgz' },
+46 silly install resolved     directories: {},
+46 silly install resolved     _resolved: 'https://registry.npmjs.org/passport.socketio/-/passport.socketio-3.6.1.tgz' } ]
+47 info install passport.socketio@3.6.1 into /Users/kimball139/Development/wardhalldrywall
+48 info installOne passport.socketio@3.6.1
+49 verbose installOne of passport.socketio to /Users/kimball139/Development/wardhalldrywall not in flight; installing
+50 verbose lock using /Users/kimball139/.npm/_locks/passport-socketio-0266fd3e18f797ac.lock for /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+51 silly install write writing passport.socketio 3.6.1 to /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+52 silly cache addNamed cb passport.socketio@3.6.1
+53 verbose unbuild node_modules/passport.socketio
+54 silly gentlyRm /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio is being purged from base /Users/kimball139/Development/wardhalldrywall
+55 verbose gentlyRm don't care about contents; nuking /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+56 verbose tar unpack /Users/kimball139/.npm/passport.socketio/3.6.1/package.tgz
+57 verbose tar unpacking to /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+58 silly gentlyRm /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio is being purged
+59 verbose gentlyRm don't care about contents; nuking /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+60 silly gunzTarPerm modes [ '755', '644' ]
+61 silly gunzTarPerm extractEntry package.json
+62 silly gunzTarPerm extractEntry .npmignore
+63 silly gunzTarPerm extractEntry README.md
+64 silly gunzTarPerm extractEntry .travis.yml
+65 silly gunzTarPerm extractEntry lib/index.js
+66 silly gunzTarPerm extractEntry test/authorizer.test.js
+67 silly gunzTarPerm extractEntry test/authorizer.withSuccess.test.js
+68 silly gunzTarPerm extractEntry test/fixture/index.js
+69 silly gunzTarPerm extractEntry test/fixture/setSocketIOHandshakeCookies.js
+70 silly gunzTarPerm extractEntry test/fixture/setupPassport.js
+71 silly gunzTarPerm extractEntry test/mocha.opts
+72 info preinstall passport.socketio@3.6.1
+73 silly prepareForInstallMany adding xtend@^4.0.0 from passport.socketio dependencies
+74 silly prepareForInstallMany adding passport@~0.3.0 from passport.socketio peerDependencies
+75 warn peerDependencies The peer dependency passport@~0.3.0 included from passport.socketio will no
+76 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+77 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+78 silly cache add args [ 'xtend@^4.0.0', null ]
+79 verbose cache add spec xtend@^4.0.0
+80 silly cache add parsed spec { raw: 'xtend@^4.0.0',
+80 silly cache add   scope: null,
+80 silly cache add   name: 'xtend',
+80 silly cache add   rawSpec: '^4.0.0',
+80 silly cache add   spec: '>=4.0.0 <5.0.0',
+80 silly cache add   type: 'range' }
+81 verbose addNamed xtend@>=4.0.0 <5.0.0
+82 silly addNamed semver.valid null
+83 silly addNamed semver.validRange >=4.0.0 <5.0.0
+84 silly addNameRange { name: 'xtend', range: '>=4.0.0 <5.0.0', hasData: false }
+85 silly mapToRegistry name xtend
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry uri https://registry.npmjs.org/xtend
+89 verbose addNameRange registry:https://registry.npmjs.org/xtend not in flight; fetching
+90 verbose request uri https://registry.npmjs.org/xtend
+91 verbose request no auth needed
+92 info attempt registry request try #1 at 19:42:39
+93 verbose etag "9RG4Q5UKTU64NGGI2APNJK5QH"
+94 http request GET https://registry.npmjs.org/xtend
+95 http 304 https://registry.npmjs.org/xtend
+96 silly get cb [ 304,
+96 silly get   { date: 'Mon, 21 Sep 2015 02:42:39 GMT',
+96 silly get     via: '1.1 varnish',
+96 silly get     'cache-control': 'max-age=60',
+96 silly get     etag: '"9RG4Q5UKTU64NGGI2APNJK5QH"',
+96 silly get     age: '26',
+96 silly get     connection: 'keep-alive',
+96 silly get     'x-served-by': 'cache-sjc3125-SJC',
+96 silly get     'x-cache': 'HIT',
+96 silly get     'x-cache-hits': '1',
+96 silly get     'x-timer': 'S1442803359.319388,VS0,VE1',
+96 silly get     vary: 'Accept' } ]
+97 verbose etag https://registry.npmjs.org/xtend from cache
+98 verbose get saving xtend to /Users/kimball139/.npm/registry.npmjs.org/xtend/.cache.json
+99 silly addNameRange number 2 { name: 'xtend', range: '>=4.0.0 <5.0.0', hasData: true }
+100 silly addNameRange versions [ 'xtend',
+100 silly addNameRange   [ '1.0.0',
+100 silly addNameRange     '1.0.1',
+100 silly addNameRange     '1.0.2',
+100 silly addNameRange     '1.0.3',
+100 silly addNameRange     '2.0.1',
+100 silly addNameRange     '2.0.2',
+100 silly addNameRange     '2.0.3',
+100 silly addNameRange     '2.0.4',
+100 silly addNameRange     '2.0.5',
+100 silly addNameRange     '2.0.6',
+100 silly addNameRange     '2.1.1',
+100 silly addNameRange     '2.1.2',
+100 silly addNameRange     '2.2.0',
+100 silly addNameRange     '3.0.0',
+100 silly addNameRange     '4.0.0' ] ]
+101 verbose addNamed xtend@4.0.0
+102 silly addNamed semver.valid 4.0.0
+103 silly addNamed semver.validRange 4.0.0
+104 silly cache afterAdd xtend@4.0.0
+105 verbose afterAdd /Users/kimball139/.npm/xtend/4.0.0/package/package.json not in flight; writing
+106 verbose afterAdd /Users/kimball139/.npm/xtend/4.0.0/package/package.json written
+107 silly install resolved [ { name: 'xtend',
+107 silly install resolved     version: '4.0.0',
+107 silly install resolved     description: 'extend like a boss',
+107 silly install resolved     keywords: [ 'extend', 'merge', 'options', 'opts', 'object', 'array' ],
+107 silly install resolved     author: { name: 'Raynos', email: 'raynos2@gmail.com' },
+107 silly install resolved     repository: { type: 'git', url: 'git://github.com/Raynos/xtend.git' },
+107 silly install resolved     main: 'immutable',
+107 silly install resolved     scripts: { test: 'node test' },
+107 silly install resolved     dependencies: {},
+107 silly install resolved     devDependencies: { tape: '~1.1.0' },
+107 silly install resolved     homepage: 'https://github.com/Raynos/xtend',
+107 silly install resolved     contributors: [ [Object], [Object] ],
+107 silly install resolved     bugs:
+107 silly install resolved      { url: 'https://github.com/Raynos/xtend/issues',
+107 silly install resolved        email: 'raynos2@gmail.com' },
+107 silly install resolved     licenses: [ [Object] ],
+107 silly install resolved     testling: { files: 'test.js', browsers: [Object] },
+107 silly install resolved     engines: { node: '>=0.4' },
+107 silly install resolved     gitHead: '94a95d76154103290533b2c55ffa0fe4be16bfef',
+107 silly install resolved     _id: 'xtend@4.0.0',
+107 silly install resolved     _shasum: '8bc36ff87aedbe7ce9eaf0bca36b2354a743840f',
+107 silly install resolved     _from: 'xtend@>=4.0.0 <5.0.0',
+107 silly install resolved     _npmVersion: '1.4.15',
+107 silly install resolved     _npmUser: { name: 'raynos', email: 'raynos2@gmail.com' },
+107 silly install resolved     maintainers: [ [Object] ],
+107 silly install resolved     dist:
+107 silly install resolved      { shasum: '8bc36ff87aedbe7ce9eaf0bca36b2354a743840f',
+107 silly install resolved        tarball: 'http://registry.npmjs.org/xtend/-/xtend-4.0.0.tgz' },
+107 silly install resolved     directories: {},
+107 silly install resolved     _resolved: 'https://registry.npmjs.org/xtend/-/xtend-4.0.0.tgz',
+107 silly install resolved     readme: 'ERROR: No README data found!' } ]
+108 info install xtend@4.0.0 into /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+109 info installOne xtend@4.0.0
+110 verbose installOne of xtend to /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio not in flight; installing
+111 verbose lock using /Users/kimball139/.npm/_locks/xtend-fb7d9d35cd4cdc76.lock for /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend
+112 silly install write writing xtend 4.0.0 to /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend
+113 silly cache addNamed cb xtend@4.0.0
+114 verbose unbuild node_modules/passport.socketio/node_modules/xtend
+115 silly gentlyRm /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend is being purged from base /Users/kimball139/Development/wardhalldrywall
+116 verbose gentlyRm don't care about contents; nuking /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend
+117 verbose tar unpack /Users/kimball139/.npm/xtend/4.0.0/package.tgz
+118 verbose tar unpacking to /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend
+119 silly gentlyRm /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend is being purged
+120 verbose gentlyRm don't care about contents; nuking /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend
+121 silly gunzTarPerm modes [ '755', '644' ]
+122 silly gunzTarPerm extractEntry package.json
+123 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+124 silly gunzTarPerm extractEntry .npmignore
+125 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+126 silly gunzTarPerm extractEntry README.md
+127 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+128 silly gunzTarPerm extractEntry LICENCE
+129 silly gunzTarPerm modified mode [ 'LICENCE', 436, 420 ]
+130 silly gunzTarPerm extractEntry immutable.js
+131 silly gunzTarPerm modified mode [ 'immutable.js', 436, 420 ]
+132 silly gunzTarPerm extractEntry mutable.js
+133 silly gunzTarPerm modified mode [ 'mutable.js', 436, 420 ]
+134 silly gunzTarPerm extractEntry test.js
+135 silly gunzTarPerm modified mode [ 'test.js', 436, 420 ]
+136 silly gunzTarPerm extractEntry .jshintrc
+137 silly gunzTarPerm modified mode [ '.jshintrc', 436, 420 ]
+138 silly gunzTarPerm extractEntry Makefile
+139 silly gunzTarPerm modified mode [ 'Makefile', 436, 420 ]
+140 info preinstall xtend@4.0.0
+141 silly install resolved []
+142 verbose about to build /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend
+143 info build /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend
+144 verbose linkStuff [ false,
+144 verbose linkStuff   false,
+144 verbose linkStuff   false,
+144 verbose linkStuff   '/Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules' ]
+145 info linkStuff xtend@4.0.0
+146 verbose linkBins xtend@4.0.0
+147 verbose linkMans xtend@4.0.0
+148 verbose rebuildBundles xtend@4.0.0
+149 info install xtend@4.0.0
+150 info postinstall xtend@4.0.0
+151 verbose unlock done using /Users/kimball139/.npm/_locks/xtend-fb7d9d35cd4cdc76.lock for /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio/node_modules/xtend
+152 verbose about to build /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+153 info build /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+154 verbose linkStuff [ false,
+154 verbose linkStuff   false,
+154 verbose linkStuff   false,
+154 verbose linkStuff   '/Users/kimball139/Development/wardhalldrywall/node_modules' ]
+155 info linkStuff passport.socketio@3.6.1
+156 verbose linkBins passport.socketio@3.6.1
+157 verbose linkMans passport.socketio@3.6.1
+158 verbose rebuildBundles passport.socketio@3.6.1
+159 verbose rebuildBundles [ 'xtend' ]
+160 info install passport.socketio@3.6.1
+161 info postinstall passport.socketio@3.6.1
+162 verbose already installed skipping passport@~0.3.0 /Users/kimball139/Development/wardhalldrywall
+163 silly install resolved []
+164 verbose unlock done using /Users/kimball139/.npm/_locks/passport-socketio-0266fd3e18f797ac.lock for /Users/kimball139/Development/wardhalldrywall/node_modules/passport.socketio
+165 verbose stack Error: The package passport does not satisfy its siblings' peerDependencies requirements!
+165 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+165 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:264:7
+165 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:138:5
+165 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+165 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+165 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+165 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+165 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+165 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+165 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+166 verbose cwd /Users/kimball139/Development/wardhalldrywall
+167 error Darwin 14.1.0
+168 error argv "node" "/usr/local/bin/npm" "install" "passport.socketio" "--save"
+169 error node v0.12.2
+170 error npm  v2.7.5
+171 error code EPEERINVALID
+172 error peerinvalid The package passport does not satisfy its siblings' peerDependencies requirements!
+172 error peerinvalid Peer passport.socketio@3.6.1 wants passport@~0.3.0
+173 verbose exit [ 1, true ]

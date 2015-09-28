@@ -122,6 +122,7 @@
       this.model.set({
         _id: app.mainView.model.id,
         isActive: app.mainView.model.get('isActive'),
+        isTutor: app.mainView.model.get('isTutor'),
         username: app.mainView.model.get('username'),
         email: app.mainView.model.get('email')
       });
@@ -138,6 +139,7 @@
     update: function() {
       this.model.save({
         isActive: this.$el.find('[name="isActive"]').val(),
+        isTutor: this.$el.find('[name="isTutor"]').val(),
         username: this.$el.find('[name="username"]').val(),
         email: this.$el.find('[name="email"]').val()
       });

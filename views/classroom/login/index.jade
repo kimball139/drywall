@@ -1,0 +1,115 @@
+extends ../../../layouts/default
+
+block head
+  title Classroom Login
+
+block feet
+  
+
+block body
+  h2 PeerSquared
+  p
+    | PeerSquared is a 
+    b free and easy to use
+    |  education tool for one-on-one online teaching. It includes a 
+    b whiteboard
+    | , 
+    b webcam &amp; text chat
+    | , and a function for 
+    b file exchange
+    | .
+  #login_wrap
+    div
+      p
+        | Fill out a unique room name (e.g. the teacher&apos;s mail address) and choose your login level. Note that tutor and student must use the 
+        b same
+        |  room name.
+      div(style='height:0; border-top: 1px solid #b1b1b1; border-bottom: 1px solid white; margin-bottom: 10px')
+      span#version_note(style='color:#cc0000; font-size:13px; margin-left: 110px')
+        b Important:
+        |  it is recommened that you update to your latest version of your web browser, otherwise the program might not work properly.
+      p
+        label Room Name
+        input#room_name(type='text', size='17', style='width:136px')
+        |  
+        span(style='color:#333; font-size: 12px')
+          i (at least 6 characters)
+        br
+      p(style='text-align:center;padding:5px; margin-top: 15px')
+        button#login_button(style='width:144px; margin-left: -70px') Start
+      div(style='height:0; border-top: 1px solid #b1b1b1; border-bottom: 1px solid white; margin-bottom: 20px')
+      p(style='margin-left: 140px; width: 400px; font-size:13px; display:none')
+        i
+          | - Do you want custom functionality? 
+          a(href='contact.php?mode=request') Send a request
+          | . 
+          br
+          | - Experiencing technical problems? 
+          a(href='contact.php?mode=problem') Report
+          |  it. 
+          br
+          | - Your 
+          a(href='contact.php?mode=feedback') feedback
+          |  is appreciated.
+      p
+    #maintanance_wrap(style='display:none')
+      | Currently the server is being updated, so PeerSquared cannot be used right now. Sorry for the inconvenience.
+  #browser_note
+    h2 Sorry...
+    p
+      | Your browser doesn&apos;t work yet with PeerSquared.
+      | Please download one of these web browsers to start using it:
+    p(style='width:100%; text-align:center')
+      a(href='http://www.mozilla.org/', title='download FireFox', target='_blank') FireFox
+      |  
+      a(href='http://www.opera.com/', title='download Opera', target='_blank') Opera
+      |  
+      a(href='http://www.google.com/chrome', title='download Chrome', target='_blank') Chrome
+    p
+
+  script(type="text/javascript").
+    if (10 == 10) {
+      alert("#{user.isTutor}");
+    }
+    
+  script(src='/views/classroom/jquery.js?#{cacheBreaker}')
+  script(src='/views/classroom/main.js?#{cacheBreaker}')
+  script(src='/views/classroom/sha1.js?#{cacheBreaker}')
+
+  script(type="text/javascript").
+    var button_wrap = get('button_wrap'),
+      browser_note = get('browser_note'),
+      version_note = get('version_note'),
+      login_button = get('login_button'),
+      login_button1 = get('login_button1');
+    var browser = browserInfo();
+      // is Browser Chrome or FireFox?
+    if(browser.valid_browser) {
+      login_wrap.style.display = 'block';
+      browser_note.style.display = 'none';
+      version_note.style.display = (browser.valid_version) ? 'none': 'block';
+    }
+    else {
+      login_wrap.style.display = 'none';
+      browser_note.style.display = 'block';
+    }
+    login_button.addEventListener('click', function() {
+      var position = document.getElementsByName('position');
+      var pref =   'whiteboard';
+      if(get('room_name').value.length < 6) {
+        get('room_name').focus();
+        alert('Please fill in a room name with at least 6 characters');
+        return false;
+      }
+      else {
+        if("#{user.isTutor}" === "yes") {
+          document.location =  pref + '/#tutor_' + Sha1.hash(get('room_name').value);
+        }
+        else if("#{user.isTutor}" === "no") {
+          document.location = pref + '/#student_' + Sha1.hash(get('room_name').value);
+        }
+      }
+    });
+
+
+

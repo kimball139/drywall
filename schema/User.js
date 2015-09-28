@@ -10,6 +10,7 @@ exports = module.exports = function(app, mongoose) {
       account: { type: mongoose.Schema.Types.ObjectId, ref: 'Account' }
     },
     isActive: String,
+    isTutor: String,
     timeCreated: { type: Date, default: Date.now },
     resetPasswordToken: String,
     resetPasswordExpires: Date,

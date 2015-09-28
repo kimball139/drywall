@@ -138,6 +138,17 @@ exports = module.exports = function(app, passport) {
   //admin > search
   app.get('/admin/search/', require('./views/admin/search/index').find);
 
+  //classroom
+  app.all('/classroom*', ensureAuthenticated);
+  app.all('/classroom*', ensureAccount);
+
+  //classroom > login
+  app.get('/classroom/login/', require('./views/classroom/login/index').init);
+  //app.post('/classroom/login/', require('./views/classroom/login/index').login);
+
+  //classroom > whiteboard
+  app.get('/classroom/whiteboard', require('./views/classroom/whiteboard/index').init);
+
   //account
   app.all('/account*', ensureAuthenticated);
   app.all('/account*', ensureAccount);

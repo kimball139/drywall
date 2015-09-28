@@ -23,6 +23,9 @@ app.config = config;
 //setup the web server
 app.server = http.createServer(app);
 
+//setup socket.io
+var io = require('socket.io').listen(app.server);
+
 //setup mongoose
 app.db = mongoose.createConnection(config.mongodb.uri);
 app.db.on('error', console.error.bind(console, 'mongoose connection error: '));
@@ -64,6 +67,7 @@ app.use(function(req, res, next) {
   res.locals.user = {};
   res.locals.user.defaultReturnUrl = req.user && req.user.defaultReturnUrl();
   res.locals.user.username = req.user && req.user.username;
+  res.locals.user.isTutor = req.user && req.user.isTutor;
   next();
 });
 
@@ -74,7 +78,7 @@ app.locals.copyrightName = app.config.companyName;
 app.locals.cacheBreaker = 'br34k-01';
 
 //setup passport
-require('./passport')(app, passport);
+require('./passport')(app, passport, express);
 
 //setup routes
 require('./routes')(app, passport);
