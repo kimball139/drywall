@@ -4,7 +4,7 @@ var renderSettings = function(req, res, next, oauthMessage) {
   var outcome = {};
 
   var getAccountData = function(callback) {
-    req.app.db.models.Account.findById(req.user.roles.account.id, 'name company phone zip').exec(function(err, account) {
+    req.app.db.models.Account.findById(req.user.roles.account.id, 'name').exec(function(err, account) {
       if (err) {
         return callback(err, null);
       }
@@ -272,19 +272,14 @@ exports.update = function(req, res, next){
         last: req.body.last,
         full: req.body.first +' '+ req.body.last
       },
-      company: req.body.company,
-      phone: req.body.phone,
-      zip: req.body.zip,
       search: [
         req.body.first,
         req.body.middle,
-        req.body.last,
-        req.body.company,
-        req.body.phone,
-        req.body.zip
+        req.body.last
+
       ]
     };
-    var options = { select: 'name company phone zip' };
+    var options = { select: 'name' };
 
     req.app.db.models.Account.findByIdAndUpdate(req.user.roles.account.id, fieldsToSet, options, function(err, account) {
       if (err) {

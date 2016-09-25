@@ -57,18 +57,14 @@ block body
         label Last Name:
         input.form-control(type='text', name='last', value!='<%- last %>')
         span.help-block <%- errfor['last'] %>
-      div.form-group(class!='<%- errfor.company ? "has-error" : "" %>')
-        label Company Name:
-        input.form-control(type='text', name='company', value!='<%- company %>')
-        span.help-block <%- errfor.company %>
-      div.form-group(class!='<%- errfor.phone ? "has-error" : "" %>')
-        label Phone:
-        input.form-control(type='text', name='phone', value!='<%- phone %>')
-        span.help-block <%- errfor.phone %>
-      div.form-group(class!='<%- errfor.zip ? "has-error" : "" %>')
-        label Zip:
-        input.form-control(type='text', name='zip', value!='<%- zip %>')
-        span.help-block <%- errfor.zip %>
+      div.form-group(class!='<%- errfor.tutorInfo ? "has-error" : "" %>')
+        label Tutor Info:
+        input.form-control(type='text', name='tutorInfo', value!='<%- tutorInfo %>')
+        span.help-block <%- errfor.tutorInfo %>
+      div.form-group(class!='<%- errfor.tutorImage ? "has-error" : "" %>')
+        label Tutor Image URL:
+        input.form-control(type='text', name='tutorImage', value!='<%- tutorImage %>')
+        span.help-block <%- errfor.tutorImage %>
       div.form-group
         button.btn.btn-primary.btn-update(type='button') Update
 

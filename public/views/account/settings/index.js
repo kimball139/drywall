@@ -24,9 +24,9 @@
       first: '',
       middle: '',
       last: '',
-      company: '',
-      phone: '',
-      zip: ''
+      tutorInfo: '',
+      tutorImage: ''
+
     },
     url: '/account/settings/',
     parse: function(response) {
@@ -98,9 +98,9 @@
         first: app.mainView.account.get('name').first,
         middle: app.mainView.account.get('name').middle,
         last: app.mainView.account.get('name').last,
-        company: app.mainView.account.get('company'),
-        phone: app.mainView.account.get('phone'),
-        zip: app.mainView.account.get('zip')
+        tutorInfo: app.mainView.account.get('tutorInfo'),
+        tutorImage: app.mainView.account.get('tutorImage')
+
       });
     },
     render: function() {
@@ -117,9 +117,9 @@
         first: this.$el.find('[name="first"]').val(),
         middle: this.$el.find('[name="middle"]').val(),
         last: this.$el.find('[name="last"]').val(),
-        company: this.$el.find('[name="company"]').val(),
-        phone: this.$el.find('[name="phone"]').val(),
-        zip: this.$el.find('[name="zip"]').val()
+        tutorInfo: this.$el.find('[name="tutorInfo"]').val(),
+        tutorImage: this.$el.find('[name="tutorImage"]').val()
+
       });
     }
   });

@@ -12,6 +12,7 @@ var config = require('./config'),
     passport = require('passport'),
     mongoose = require('mongoose'),
     helmet = require('helmet'),
+    socket_io = require('socket.io'),
     csrf = require('csurf');
 
 //create express app
@@ -24,7 +25,8 @@ app.config = config;
 app.server = http.createServer(app);
 
 //setup socket.io
-var io = require('socket.io').listen(app.server);
+
+var io = socket_io.listen(app.server);
 
 //setup mongoose
 app.db = mongoose.createConnection(config.mongodb.uri);
@@ -83,8 +85,10 @@ require('./passport')(app, passport, express);
 //setup routes
 require('./routes')(app, passport);
 
+
 //custom (friendly) error handler
 app.use(require('./views/http/index').http500);
+
 
 //setup utilities
 app.utility = {};
@@ -96,4 +100,57 @@ app.utility.workflow = require('./util/workflow');
 app.server.listen(app.config.port, function(){
   //and... we're live
   console.log('Server is running on port ' + config.port);
+});
+
+var getUsersInRoomNumber = function(roomName, namespace) {
+    if (!namespace) namespace = '/';
+    var room = io.nsps[namespace].adapter.rooms[roomName];
+    if (!room) return null;
+    return Object.keys(room).length;
+}
+
+var fs = require('fs');
+
+function handler (req, res) {
+     fs.readFile(__dirname + '/index.html',
+         function (err, data) {
+
+             if (err) {
+                 res.writeHead(500);
+                 return res.end('Error loading index.html');
+             }
+             res.writeHead(200);
+             res.end(data);
+         });
+}
+
+
+io.sockets.on('connection', function (socket) {
+socket.on('join room', function(data){
+// check for SHA-1 string
+if(data.room.match(/^[A-Za-z0-9]{40}$/) == null) {
+socket.emit('user error', {error: 'invalid room', message:
+'The server will disconnect now'});
+socket.disconnect();
+}
+else if(getUsersInRoomNumber > 2){
+socket.emit('user error', {error: 'too many users', message:
+'The server will disconnect now'});
+socket.disconnect();
+}
+else {
+socket.room = data.room;
+socket.join(socket.room);
+socket.emit('user joined', {user_count:
+Object.keys(io.nsps['/'].adapter.rooms[socket.room]).length, user: 'current'});
+            socket.broadcast.to(socket.room).emit('user joined',
+{user_count: Object.keys(io.nsps['/'].adapter.rooms[socket.room]).length, user: 'other'});
+        }
+}).on('disconnect', function(data){
+socket.broadcast.to(socket.room).emit('user left', {data: 'left'});
+}).on('webrtc', function(data) {
+// if(socket.room == data.room) {
+socket.broadcast.to(socket.room).emit('webrtc', data);
+// }
+});
 });

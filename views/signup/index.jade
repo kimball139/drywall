@@ -11,9 +11,13 @@ block feet
 
 block body
   div.row
+
     div.col-sm-6
-      div.page-header
-        h1 Sign Up
+      
+      div.headertitle
+        h1.title Sign Up!
+      div.page-header-title
+        h1 Create an Account
       div#signup
       if oauthTwitter || oauthGitHub || oauthFacebook || oauthGoogle || oauthTumblr
         hr
@@ -61,7 +65,7 @@ block body
           |<%- err %>
         |<% }); %>
       div.form-group(class!='<%- errfor.username ? "has-error" : "" %>')
-        label Pick a Username:
+        label Choose a Username:
         input.form-control(type='text', name='username', value!='<%= username %>')
         span.help-block <%- errfor.username %>
       div.form-group(class!='<%- errfor.email ? "has-error" : "" %>')

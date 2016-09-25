@@ -28,6 +28,7 @@ function ensureAccount(req, res, next) {
   res.redirect('/');
 }
 
+
 exports = module.exports = function(app, passport) {
   //front end
   app.get('/', require('./views/index').init);
@@ -185,3 +186,4 @@ exports = module.exports = function(app, passport) {
   //route not found
   app.all('*', require('./views/http/index').http404);
 };
+

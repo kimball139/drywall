@@ -10,9 +10,8 @@
     defaults: {
       _id: undefined,
       'name.full': '',
-      company: '',
-      phone: '',
-      zip: '',
+      tutorInfo: '',
+      tutorImage: '',
       status: {
         id: undefined,
         name: '',

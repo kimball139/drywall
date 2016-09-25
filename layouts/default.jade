@@ -11,7 +11,7 @@ html
       div.container
         div.navbar-header
           a.navbar-brand(href='/')
-            img.navbar-logo(src='/media/logo-symbol-64x64.png', alt='Logo')
+            img.navbar-logo(src='/media/room2tutor_logo.png', alt='Logo')
             span.navbar-brand-label #{projectName}
           button.navbar-toggle.collapsed(data-toggle='collapse', data-target='.my-navbar-collapse')
             span.icon-bar
@@ -19,17 +19,16 @@ html
             span.icon-bar
         div.navbar-collapse.my-navbar-collapse.collapse
           ul.nav.navbar-nav
-            li: a(href='/') Home
-            li: a(href='/about/') About
-            li: a(href='/signup/') Sign Up
-            li: a(href='/contact/') Contact
+            li.about: a(href='/about/') Learn More
+            li.tutor: a(href='/becomeatutor/') Become a Tutor?
+            li.signup: a(href='/signup/') Sign Up
           ul.nav.navbar-nav.navbar-right
             if user && user.username
               li: a(href='#{user.defaultReturnUrl}')
                 i.fa.fa-user
                 |  #{user.username}
             else
-              li: a(href='/login/')
+              li.login: a(href='/login/')
                 i.fa.fa-user
                 |  Sign In
 
@@ -42,6 +41,7 @@ html
         span.copyright.pull-right
           |&#169; #{copyrightYear} #{copyrightName}
         ul.links
+          img.footer-logo(src='/media/r2_logo.png', alt='Logo')
           li: a(href='/') Home
           li: a(href='/contact/') Contact
         div.clearfix

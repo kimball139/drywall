@@ -5,7 +5,7 @@
  * */
 
 var Socket = (function() {
-	var connected  = false, socket, pusher_socket, _room
+	var connected  = false, socket, _room,
 	users_connected_handler = function() {},
 	message_received_handler = function(){};	  
 
@@ -13,7 +13,7 @@ var Socket = (function() {
 		// Public methods
 		// Open a websocket connection and create channel event listeners	
 		open : function(room) {
-			socket = io('http://fabfactory.cloud.tilaa.com:3003'); 
+			socket = io(); 
 			_room = room;
 
 			console.log('connecting user to socket server');
@@ -35,11 +35,14 @@ var Socket = (function() {
 			});
 			
 			socket.on('connect', function() {
+				console.log("connected?=" + connected);	
 				console.log('socket connection established');
-				console.log("connecting to " + _room)
+				console.log("connecting to " + _room);
 				socket.emit('join room', {room: _room});
-				connected = true;		
+				connected = true;	
+				console.log("how about now connected?=" + connected);	
 			});
+
 		},
 		/* Send data to the other user through the websocket but only if 'connected' is true
 		 * Parameter is an object with two keys: type (ice or sdp) and data (the concerned data 

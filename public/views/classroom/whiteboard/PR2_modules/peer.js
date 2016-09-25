@@ -6,6 +6,7 @@
  * @static
  * @requires utils
 */
+
 PR2.peer = (function() {
 	var $ = PR2.utils,
 		PeerConnection = window.mozRTCPeerConnection || window.webkitRTCPeerConnection || window.RTCPeerConnection ,
@@ -13,7 +14,7 @@ PR2.peer = (function() {
 		SessionDescription =  window.mozRTCSessionDescription || window.webkitRTCSessionDescription || window.RTCSessionDescription ,
         servers = { "iceServers": [
             { url: "stun:stun.l.google.com:19302" },
-            { url: "turn:numb.viagenie.ca", credential: "PSQtest2013", username: "fabian%40peersquared.info"}
+            { url: "turn:numb.viagenie.ca", credential: "Room2", username: "kimball139%40yahoo.com"}
         ]},
 		options = {},
 		starter = false, // will be set to for the peer that starts the connection
@@ -50,6 +51,7 @@ PR2.peer = (function() {
 			remoteCamPeerConnection.onicecandidate = _got_remote_cam_ice_candidate;
 			remoteCamPeerConnection.onaddstream = _on_remote_stream;
 			$.log('info', 'Peer objects are initialized');
+
 		};
 		// Note that this datachannels is intented for exchange of peer connection data, but the primary peer data is exchanged through a server!
 		// This method should only called by the one that sets the connections
@@ -61,6 +63,7 @@ PR2.peer = (function() {
 			peer_info_data_channel.onmessage = _peer_info_data_channel_message;
 			dataPeerConnection.createOffer(_offerCreated, error);
 			$.log('info', 'Peer connection is created');
+
 		};
 
 		var _offerCreated = function(sdp) {

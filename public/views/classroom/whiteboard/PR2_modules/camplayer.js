@@ -47,7 +47,8 @@ PR2.camplayer = (function(self) {
 		cam_button.classList.remove('pr2_active_cam_button');
 		var track = local_stream.getTracks()[0];
 		track.stop();
-		local_stream.stop();
+		local_stream.getTracks().forEach(function (track) { track.stop(); });
+		
 		local_stream = null;
 		local_stream_stop_handler();
 	};

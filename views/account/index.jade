@@ -44,3 +44,21 @@ block body
       div.page-header
         h1 Go Faster Everyday
       i.fa.fa-dashboard.super-awesome
+  div.row
+
+  h1= title
+    #accounts
+      - each account in accounts
+        div.account
+          li
+            = account.name.full
+          li
+            = account.tutorInfo
+          li
+            = account.userCreated.time
+          li
+            = account._id
+          li
+            img(src='#{account.tutorImage}' style='width:300px;')
+  iframe(src='https://app.acuityscheduling.com/schedule.php?owner=11761114', width='100%', height='800', frameborder='0')
+  script(src='https://d3gxy7nm8y4yjr.cloudfront.net/js/embed.js', type='text/javascript')

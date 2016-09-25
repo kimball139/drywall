@@ -16,6 +16,10 @@ exports.sendMessage = function(req, res){
       workflow.outcome.errfor.email = 'required';
     }
 
+    if (!req.body.subject) {
+      workflow.outcome.errfor.subject = 'required';
+    }
+
     if (!req.body.message) {
       workflow.outcome.errfor.message = 'required';
     }
@@ -32,12 +36,13 @@ exports.sendMessage = function(req, res){
       from: req.app.config.smtp.from.name +' <'+ req.app.config.smtp.from.address +'>',
       replyTo: req.body.email,
       to: req.app.config.systemEmail,
-      subject: req.app.config.projectName +' contact form',
+      subject: req.app.config.projectName +' Contact Form' + ' - ' + req.body.subject,
       textPath: 'contact/email-text',
       htmlPath: 'contact/email-html',
       locals: {
         name: req.body.name,
         email: req.body.email,
+        subject: req.body.subject,
         message: req.body.message,
         projectName: req.app.config.projectName
       },

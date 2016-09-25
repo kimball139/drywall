@@ -32,7 +32,7 @@ exports.find = function(req, res, next){
 
     req.app.db.models.Account.pagedFind({
       filters: filters,
-      keys: 'name company phone zip userCreated status',
+      keys: 'name tutorInfo tutorImage userCreated status',
       limit: req.query.limit,
       page: req.query.page,
       sort: req.query.sort
@@ -189,16 +189,13 @@ exports.update = function(req, res, next){
         last: req.body.last,
         full: req.body.first +' '+ req.body.last
       },
-      company: req.body.company,
-      phone: req.body.phone,
-      zip: req.body.zip,
+      tutorInfo: req.body.tutorInfo,
+      tutorImage: req.body.tutorImage,
       search: [
         req.body.first,
         req.body.middle,
         req.body.last,
-        req.body.company,
-        req.body.phone,
-        req.body.zip
+        req.body.Info
       ]
     };
 

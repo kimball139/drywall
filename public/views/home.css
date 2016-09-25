@@ -1,0 +1,68 @@
+.nav>li>a {
+    padding: 15px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.navbar-default .navbar-nav>.home>a, .navbar-default .navbar-nav>.home>a:hover, .navbar-default .navbar-nav>.home>a:focus {
+	border-bottom: #2f84b5;
+    color: #2f84b5;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>.about>a:hover, .navbar-default .navbar-nav>.about>a:focus {
+	border-bottom: #602951;
+    color: #602951;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>.signup>a:hover, .navbar-default .navbar-nav>.signup>a:focus {
+	border-bottom: #9a471f;
+    color: #9a471f;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>.tutor>a:hover, .navbar-default .navbar-nav>.tutor>a:focus {
+	border-bottom: #215633;
+    color: #215633;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav>.login>a:hover, .navbar-default .navbar-nav>.login>a:focus {
+	border-bottom: #8bce4d;
+    color: #8bce4d;
+    text-decoration: underline;
+}
+
+@media (min-width:768px){
+.navbar-default .navbar-nav>.about>a:hover, .navbar-default .navbar-nav>.about>a:focus, .navbar-default .navbar-nav>.signup>a:hover, .navbar-default .navbar-nav>.signup>a:focus, .navbar-default .navbar-nav>.tutor>a:hover, .navbar-default .navbar-nav>.tutor>a:focus, .navbar-default .navbar-nav>.login>a:hover, .navbar-default .navbar-nav>.login>a:focus {
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+    padding-bottom: 3px;
+    text-decoration: none;
+    transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+    -webkit-transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+    -moz-transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+    -ms-transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+    -o-transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+    padding-bottom: 3px;
+    transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+    -webkit-transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+    -moz-transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+    -ms-transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+    -o-transition: color .15s ease-out,background .1s ease-out,border .1s ease-out,height .35s ease,border-width .15s ease;
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+    padding-bottom: 3px;
+}
+}

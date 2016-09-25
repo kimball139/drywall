@@ -2,13 +2,12 @@ var user = location.hash.slice(1).split('_');
 var credentials = {level: user[0], name: user[0], channel: user[1]};
 var mode = user[2] || 'online';
 
-window.onbeforeunload = function () {
-    if (PR2.peer.isConnected()) {
+window.onbeforeunload = function (e) {
+    if (PR2.peer.isConnected()) {        
         // try to inform the other side that the user is leaving
-        PR2.peer.sendData(JSON.stringify({type: 'close-connection'}));
+        PR2.sendPeerData(JSON.stringify({type: 'close-connection'}));
     }
 };
-
 
 (function(credentials, mode){
 	// DEFINE SOME VARIABLES
@@ -1328,6 +1327,7 @@ window.onbeforeunload = function () {
             if(level == 'tutor') {
                 PR2.peer.connect();
             }
+                            console.log('setup.js mode');
         });
         // Send message to peer object from the socket server when information becomes available
         Socket.onMessage(function(message) {

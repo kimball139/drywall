@@ -13,6 +13,7 @@
       errfor: {},
       name: '',
       email: '',
+      subject: '',
       message: ''
     }
   });
@@ -42,6 +43,7 @@
       this.model.save({
         name: this.$el.find('[name="name"]').val(),
         email: this.$el.find('[name="email"]').val(),
+        subject: this.$el.find('[name="subject"]').val(),
         message: this.$el.find('[name="message"]').val()
       });
     }

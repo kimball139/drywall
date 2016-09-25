@@ -12,8 +12,10 @@ block feet
 block body
   div.row
     div.col-sm-6
-      div.page-header
-        h1 Send A Message
+      div.headertitle
+        h1.title Contact
+      div.page-header-title
+        h1 Send a Message
       div#contact
     div.col-sm-6.special
       div.page-header
@@ -44,6 +46,10 @@ block body
         label Your Email:
         input.form-control(type='text', name='email', value!='<%= email %>')
         span.help-block <%- errfor.email %>
+      div.form-group(class!='<%- errfor.subject ? "has-error" : "" %>')
+        label Subject:
+        input.form-control(type='text', name='subject', value!='<%= subject %>')
+        span.help-block <%- errfor.subject %>
       div.form-group(class!='<%- errfor.message ? "has-error" : "" %>')
         label Message:
         textarea.form-control(name='message', rows='5') <%= message %>
